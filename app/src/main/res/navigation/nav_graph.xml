@@ -7,7 +7,53 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.pnxand.netflixclone.MainActivity"
+        android:name="com.pnxand.netflixclone.view.base.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.pnxand.netflixclone.view.core.main.MainFragment"
+        android:label="메인"
+        tools:layout="@layout/fragment_main"
+        >
+        <action
+            android:id="@+id/action_MainFragment_to_DownloadFragment"
+            app:destination="@id/DownloadFragment"
+            />
+        <action
+            android:id="@+id/action_MainFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_SearchFragment"
+            app:destination="@id/SearchFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_ComingFragment"
+            app:destination="@id/ComingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.pnxand.netflixclone.view.core.home.HomeFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home"
+        />
+
+    <fragment
+        android:id="@+id/ComingFragment"
+        android:name="com.pnxand.netflixclone.view.core.coming.ComingFragment"
+        android:label="커밍"
+        tools:layout="@layout/fragment_coming"
+        />
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.pnxand.netflixclone.view.core.search.SearchFragment"
+        android:label="검색"
+        tools:layout="@layout/fragment_search"
+        />
+    <fragment
+        android:id="@+id/DownloadFragment"
+        android:name="com.pnxand.netflixclone.view.core.download.DownloadFragment"
+        android:label="다운로드"
+        tools:layout="@layout/fragment_download"
+        />
 </navigation>
