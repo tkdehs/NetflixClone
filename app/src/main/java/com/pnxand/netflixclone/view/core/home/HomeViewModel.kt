@@ -22,6 +22,22 @@ class HomeViewModel : BaseViewModel() {
                    val result = NetworkService().getApiService().getTrendingMovies()
                    callback(result.results)
                }
+               sectionList[1]->{
+                   val result = NetworkService().getApiService().getTrendingTv()
+                   callback(result.results)
+               }
+               sectionList[2]->{
+                   val result = NetworkService().getApiService().getPopular()
+                   callback(result.results)
+               }
+               sectionList[3]->{
+                   val result = NetworkService().getApiService().getUpcomingMovies()
+                   callback(result.results)
+               }
+               sectionList[4]->{
+                   val result = NetworkService().getApiService().getTopRated()
+                   callback(result.results)
+               }
            }
        }
     }

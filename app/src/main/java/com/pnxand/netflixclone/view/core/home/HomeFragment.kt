@@ -94,13 +94,16 @@ class HomeFragment :BaseFragment() {
 
         inner class HeaderViewHolder(private val binding: FragmentHomeHeaderBinding): RecyclerView.ViewHolder(binding.root) {
             fun bind(){
-                val url = "https://image.tmdb.org/t/p/w500//tlu71AgaL3EQBBCNGsAwZLPbV5D.jpg"
-                Glide.with(requireContext())
-                    .load(url)
-                    .centerCrop()
-                    .placeholder(R.drawable.heroimage)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(binding.imgBanner)
+                viewModel.getSactionData(viewModel.sectionList[0]){
+                    val url = "https://image.tmdb.org/t/p/w500/${it.random().poster_path}"
+                    Glide.with(requireContext())
+                        .load(url)
+                        .centerCrop()
+                        .placeholder(R.drawable.heroimage)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(binding.imgBanner)
+                }
+
             }
         }
     }
